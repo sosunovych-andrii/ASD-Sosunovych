@@ -2,6 +2,7 @@ package org.example;
 import Lab1.Lab1;
 import Lab2.Lab2;
 import Lab3.Lab3;
+import Lab4.Lab4;
 
 import java.util.Scanner;
 
@@ -19,6 +20,9 @@ public class Main {
                 break;
             case 3:
                 Lab3.lab_demonstration();
+                break;
+            case 4:
+                Lab4.lab_demonstration();
                 break;
             default:
                 System.out.println("Invalid choice");

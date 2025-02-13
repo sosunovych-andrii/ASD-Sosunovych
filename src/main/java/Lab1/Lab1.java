@@ -1,4 +1,5 @@
 package Lab1;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Lab1 {
@@ -24,7 +25,7 @@ public class Lab1 {
     public static void calculateY() {
         System.out.println("\nTASK 2");
 
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
         System.out.println("Enter an a, b, x:");
         double a = scanner.nextDouble();
         double b = scanner.nextDouble();
