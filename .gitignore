@@ -36,3 +36,7 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+
+### other files ###
+src/main/java/Lab8/Lab8_info.txt
