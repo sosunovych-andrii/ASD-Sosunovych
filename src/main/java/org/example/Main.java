@@ -5,6 +5,7 @@ import Lab3.Lab3;
 import Lab4.Lab4;
 import Lab5.Lab5;
 import Lab6.Lab6;
+import Lab7.Lab7;
 import Lab8.Lab8;
 
 import java.util.Scanner;
@@ -32,6 +33,9 @@ public class Main {
                 break;
             case 6:
                 Lab6.lab_demonstration();
+                break;
+            case 7:
+                Lab7.lab_demonstration();
                 break;
             case 8:
                 Lab8.lab_demonstration();
