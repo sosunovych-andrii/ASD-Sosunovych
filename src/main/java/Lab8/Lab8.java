@@ -70,11 +70,6 @@ public class Lab8 {
     }
 
 
-    /*
-    Пошук Фібоначчі
-    */
-
-
     private static void transpositionSearch(int[] arr, int target) {
         System.out.println("Transposition search:");
         boolean targetFound = false;
@@ -261,9 +256,50 @@ public class Lab8 {
     }
 
 
-   /*
-   Пірамідальне сортування
-   */
+    private static void heapSort(int[] arr) {
+        System.out.println("Heap sort:");
+        int n = arr.length;
+
+        // будування макс-купи
+        for (int i = n / 2 - 1; i >= 0; i--) {
+            heapify(arr, n, i);
+        }
+
+        // вилучення елементів із піраміди
+        for (int i = n - 1; i > 0; i--) {
+            // переміщення кореня на кінець
+            int temp = arr[0];
+            arr[0] = arr[i];
+            arr[i] = temp;
+
+            heapify(arr, i, 0);
+        }
+        System.out.println("Sorted array: " + Arrays.toString(arr) + "\n");
+    }
+
+    private static void heapify(int[] arr, int n, int i) {
+        int largest = i;
+        int left = 2 * i + 1;
+        int right = 2 * i + 2;
+
+        if (left < n && arr[left] > arr[largest]) {
+            largest = left;
+        }
+
+        if (right < n && arr[right] > arr[largest]) {
+            largest = right;
+        }
+
+        // якщо найбільший не є коренем
+        if (largest != i) {
+            int temp = arr[i];
+            arr[i] = arr[largest];
+            arr[largest] = temp;
+
+            // рекурсивно заповнюємо піддерево
+            heapify(arr, n, largest);
+        }
+    }
 
 
     private static void quickSort(int[] arr, int firstIndex, int lastIndex) {
@@ -370,6 +406,7 @@ public class Lab8 {
         System.out.println("Quick sort:");
         quickSort(arrQuick, 0, arrQuick.length - 1);
         System.out.println("Sorted array: " + Arrays.toString(arrQuick) + "\n");
+        heapSort(arr2.clone());
 
 
         //3.Посортувати елементи котрі присутні в масиві A, але відсутні в масиві B
